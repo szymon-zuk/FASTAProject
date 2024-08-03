@@ -11,7 +11,7 @@ def run_script(script_path):
 
 def main():
     # Paths to the scripts
-    script1 = 'conversion_png_to_csv.py'
+    script1 = 'conversion_image_to_csv.py'
     script2 = 'main.py'
 
     # Run the scripts
