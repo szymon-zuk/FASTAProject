@@ -1,5 +1,6 @@
 import csv
 import os
+
 from Bio import Entrez, SeqIO
 
 
@@ -9,7 +10,9 @@ def fetch_and_save_sequences(gene, accessions, output_dir):
     sequences = []
     for acc in accessions:
         try:
-            handle = Entrez.efetch(db="nucleotide", id=acc, rettype="fasta", retmode="text")
+            handle = Entrez.efetch(
+                db="nucleotide", id=acc, rettype="fasta", retmode="text"
+            )
             seq_record = SeqIO.read(handle, "fasta")
             handle.close()
             sequences.append(seq_record)
@@ -23,10 +26,10 @@ def fetch_and_save_sequences(gene, accessions, output_dir):
 
 
 def main():
-    csv_path = '/home/szymon/Desktop/FASTAProject/results/converted_table.csv'  # Provide path to your CSV file
+    csv_path = "/home/szymon/Desktop/FASTAProject/results/converted_table.csv"  # Provide path to your CSV file
 
     # Provide path to the folder in which you want FASTA results
-    output_dir = '/home/szymon/Desktop/FASTAProject/fasta_results/'
+    output_dir = "/home/szymon/Desktop/FASTAProject/fasta_results/"
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -34,7 +37,7 @@ def main():
     # Loading data from CSV file
     gene_dict = {}
 
-    with open(csv_path, newline='') as csvfile:
+    with open(csv_path, newline="") as csvfile:
         reader = csv.reader(csvfile)
         headers = next(reader)[1:]  # Skip the first header row and get the gene names
         for header in headers:

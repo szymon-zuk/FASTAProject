@@ -1,19 +1,20 @@
+import os
+
+import pandas as pd
 import pytesseract
 from PIL import Image
-import pandas as pd
-import os
 
 
 def main():
     # Path to the file with the image
-    image_path = '/home/szymon/Desktop/FASTAProject/input/tabelka.png'
+    image_path = "/home/szymon/Desktop/FASTAProject/input/tabelka.png"
 
     # Reading text on image using Tesseract OCR
     text = pytesseract.image_to_string(Image.open(image_path))
     print("Extracted text:\n", text)
 
     # Splitting text into lines
-    lines = text.split('\n')
+    lines = text.split("\n")
 
     # Dividing lines into cells
     data = []
@@ -29,7 +30,7 @@ def main():
     df = pd.DataFrame(data)
 
     # Defining path to CSV file
-    csv_path = '/home/szymon/Desktop/FASTAProject/results/converted_table.csv'
+    csv_path = "/home/szymon/Desktop/FASTAProject/results/converted_table.csv"
 
     # Export to CSV
     df.to_csv(csv_path, index=False, header=False)
