@@ -2,7 +2,7 @@ import subprocess
 
 
 def run_script(script_path):
-    result = subprocess.run(['python3', script_path], capture_output=True, text=True)
+    result = subprocess.run(["python3", script_path], capture_output=True, text=True)
     if result.returncode != 0:
         print(f"Error running {script_path}:\n{result.stderr}")
     else:
@@ -11,8 +11,8 @@ def run_script(script_path):
 
 def main():
     # Paths to the scripts
-    script1 = 'conversion_image_to_csv.py'
-    script2 = 'main.py'
+    script1 = "conversion_image_to_csv.py"
+    script2 = "download_fasta_sequence.py"
 
     # Run the scripts
     print("Running the image to CSV conversion script...")
