@@ -41,27 +41,27 @@ macOS: brew install tesseract
 Windows: Download the installer from the official repository and follow the installation instructions.
 
 ### Usage
-Convert Table Image to CSV
+#### Convert Table Image to CSV
 
-Run the convert_image_to_csv.py script to convert the table image to a CSV file:
+Run the conversion_image_to_csv.py script to convert the table image to a CSV file:
 
 ```bash
-python3 convert_image_to_csv.py
+python3 conversion_image_to_csv.py
 ```
-This script reads the table from input/tabelka.png and saves the extracted data to results/converted_table.csv.
+This script reads the table from `input/tabelka.png` and saves the extracted data to `results/converted_table.csv`.
 
-Download FASTA Sequences
+#### Download FASTA Sequences
 
-Run the download_fasta_files.py script to download FASTA sequences based on the CSV file:
+Run the `download_fasta_files.py` script to download FASTA sequences based on the CSV file:
 
 ```bash
 python3 download_fasta_files.py
 ```
-This script reads the accession numbers from results/converted_table.csv and downloads the corresponding FASTA sequences to the fasta_results/ directory.
+This script reads the accession numbers from `results/converted_table.csv` and downloads the corresponding FASTA sequences to the `fasta_results/` directory.
 
-### Run All Steps
+#### Run All Steps
 
-Alternatively, you can run both steps sequentially using the run_all.py master script:
+Alternatively, you can run both steps sequentially using the `run_all.py` master script:
 
 ```bash
 python3 run_all.py
